@@ -92,7 +92,7 @@ export const Projects: React.FC = () => {
       title: "PHOTO → DIGITAL AVATAR",
       description: "AI-driven identity preservation system that transforms personal photos into high-fidelity digital avatars and professional headshots without manual editing.",
       tags: ["Vision", "Python", "Generative AI"],
-      thumbnail: "media/photo/V1-Thumbnail.jpeg",
+      thumbnail: "/media/photo/V1-Thumbnail.jpeg",
       link: "https://www.linkedin.com/posts/paarth-thakran_ai-agenticai-aiagent-activity-7412493740839436288-0Wwl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFiGLBgBJyj10BuyNGOVXa5AhECBzYmKKeA",
       features: [
         "Keeps actual face identity intact",
@@ -105,7 +105,7 @@ export const Projects: React.FC = () => {
       title: "Assistive AI for Classrooms",
       description: "An interactive, visual-first whiteboard solution for students aged 5-15. Explains complex logic and science through real-time generative visuals.",
       tags: ["EdTech", "Agentic AI", "Voice"],
-      thumbnail: "media/photo/V2.jpg",
+      thumbnail: "/media/photo/V2.jpg",
       link: "https://www.linkedin.com/posts/paarth-thakran_edtech-ai-ml-activity-7411383288952487936-Wiyk?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFiGLBgBJyj10BuyNGOVXa5AhECBzYmKKeA",
       features: [
         "Real-time visual concept generation",
@@ -118,7 +118,7 @@ export const Projects: React.FC = () => {
       title: "Visual Validation Engine",
       description: "Automated high-precision testing tool designed for UI/UX validation. Detects pixel-level inconsistencies between design iterations and production.",
       tags: ["Automation", "OpenCV", "QA"],
-      thumbnail: "media/photo/2A9ADD17-4AB0-4344-9F0F-9DF1D961AB54.jpeg",
+      thumbnail: "/media/photo/2A9ADD17-4AB0-4344-9F0F-9DF1D961AB54.jpeg",
       link: "https://www.linkedin.com/posts/paarth-thakran_automation-webtesting-softwaretesting-activity-7396890790767128576-6gl8?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFiGLBgBJyj10BuyNGOVXa5AhECBzYmKKeA",
       features: [
         "Instant pixel-perfect comparison",

@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
 
           <div className="relative w-64 h-80 sm:w-80 sm:h-[420px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
             <img
-              src="media/photo/hero-sec.jpeg"
+              src="/media/photo/hero-sec.jpeg"
               alt="Paarth Thakran"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               style={{ objectPosition: 'center top' }}
