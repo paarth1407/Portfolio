@@ -17,21 +17,21 @@ export const Hero: React.FC = () => {
           Building Intelligent <br />
           <span className="text-gradient">Voice & Vision Systems</span>
         </h1>
-        
+
         <p className="max-w-xl text-lg text-gray-400 mb-10 leading-relaxed">
-          I am Paarth Thakran. I specialize in crafting agentic AI, sophisticated RAG architectures, 
+          I am Paarth Thakran. I specialize in crafting agentic AI, sophisticated RAG architectures,
           and high-performance vision-based systems that solve real-world complexities.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <a 
-            href="#projects" 
+          <a
+            href="#projects"
             className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition-all shadow-lg shadow-indigo-500/25 text-center"
           >
             View Projects
           </a>
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="w-full sm:w-auto px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-bold transition-all border border-gray-700 text-center"
           >
             Download Resume
@@ -62,10 +62,10 @@ export const Hero: React.FC = () => {
         <div className="relative group">
           {/* Decorative frame */}
           <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-500/20 to-blue-500/20 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all opacity-50"></div>
-          
+
           <div className="relative w-64 h-80 sm:w-80 sm:h-[420px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=800&auto=format&fit=crop" 
+            <img
+              src="media/photo/hero-sec.jpeg"
               alt="Paarth Thakran"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               style={{ objectPosition: 'center top' }}
@@ -73,11 +73,11 @@ export const Hero: React.FC = () => {
             {/* Overlay for sleek look */}
             <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent"></div>
           </div>
-          
+
           {/* Subtle floating badge */}
           <div className="absolute -bottom-6 -right-6 glass-card p-4 rounded-2xl border-white/10 hidden sm:block">
             <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-[0.2em]">Based in India</p>
-            <p className="text-sm font-bold text-white">Full Stack AI</p>
+            <p className="text-sm font-bold text-white">AI | AI Agents</p>
           </div>
         </div>
       </div>

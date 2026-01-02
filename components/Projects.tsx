@@ -6,23 +6,44 @@ interface ProjectProps {
   description: string;
   features: string[];
   tags: string[];
+  thumbnail?: string;
+  link?: string;
 }
 
-const ProjectCard: React.FC<ProjectProps> = ({ title, description, features, tags }) => {
+const ProjectCard: React.FC<ProjectProps> = ({ title, description, features, tags, thumbnail, link }) => {
+  const handleAction = () => {
+    if (link) {
+      window.open(link, '_blank');
+    }
+  };
+
   return (
     <div className="group glass-card rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:translate-y-[-8px] flex flex-col h-full border-white/5 hover:border-indigo-500/30">
-      {/* Video Placeholder Area */}
-      <div className="aspect-video bg-gray-950 flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-indigo-600/5 group-hover:bg-indigo-600/10 transition-colors"></div>
-        <div className="text-center p-8 z-10">
-          <svg className="w-12 h-12 text-indigo-500/20 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-          </svg>
-          <p className="text-[10px] font-bold text-gray-600 uppercase tracking-[0.3em]">Project Demo Video</p>
-        </div>
+      {/* Media Area */}
+      <div
+        className="aspect-video bg-gray-950 flex items-center justify-center relative overflow-hidden cursor-pointer"
+        onClick={handleAction}
+      >
+        {thumbnail ? (
+          <img
+            src={thumbnail}
+            alt={title}
+            className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
+          />
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-indigo-600/5 group-hover:bg-indigo-600/10 transition-colors"></div>
+            <div className="text-center p-8 z-10">
+              <svg className="w-12 h-12 text-indigo-500/20 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+              </svg>
+              <p className="text-[10px] font-bold text-gray-600 uppercase tracking-[0.3em]">Project Demo</p>
+            </div>
+          </>
+        )}
         <div className="absolute top-4 right-4">
           <div className="px-3 py-1 bg-black/40 backdrop-blur-md rounded-full text-[9px] font-bold text-indigo-400 border border-white/5 uppercase tracking-widest">
-            Case Study
+            {link ? 'External Link' : 'Case Study'}
           </div>
         </div>
       </div>
@@ -35,9 +56,9 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, features, tag
             </span>
           ))}
         </div>
-        
+
         <h4 className="text-2xl font-bold mb-4 tracking-tight group-hover:text-indigo-400 transition-colors uppercase">{title}</h4>
-        
+
         <p className="text-gray-400 text-sm mb-8 leading-relaxed font-medium">
           {description}
         </p>
@@ -51,8 +72,11 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, features, tag
           ))}
         </div>
 
-        <button className="w-full py-4 bg-gray-900 hover:bg-indigo-600 text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center space-x-3 border border-white/5 uppercase tracking-widest">
-          <span>Explore Architecture</span>
+        <button
+          onClick={handleAction}
+          className="w-full py-4 bg-gray-900 hover:bg-indigo-600 text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center space-x-3 border border-white/5 uppercase tracking-widest"
+        >
+          <span>{link ? 'View on LinkedIn' : 'Explore Architecture'}</span>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
@@ -68,6 +92,8 @@ export const Projects: React.FC = () => {
       title: "PHOTO → DIGITAL AVATAR",
       description: "AI-driven identity preservation system that transforms personal photos into high-fidelity digital avatars and professional headshots without manual editing.",
       tags: ["Vision", "Python", "Generative AI"],
+      thumbnail: "media/photo/V1-Thumbnail.jpeg",
+      link: "https://www.linkedin.com/posts/paarth-thakran_ai-agenticai-aiagent-activity-7412493740839436288-0Wwl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFiGLBgBJyj10BuyNGOVXa5AhECBzYmKKeA",
       features: [
         "Keeps actual face identity intact",
         "Automated lighting and angle correction",
@@ -79,6 +105,8 @@ export const Projects: React.FC = () => {
       title: "Assistive AI for Classrooms",
       description: "An interactive, visual-first whiteboard solution for students aged 5-15. Explains complex logic and science through real-time generative visuals.",
       tags: ["EdTech", "Agentic AI", "Voice"],
+      thumbnail: "media/photo/V2.jpg",
+      link: "https://www.linkedin.com/posts/paarth-thakran_edtech-ai-ml-activity-7411383288952487936-Wiyk?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFiGLBgBJyj10BuyNGOVXa5AhECBzYmKKeA",
       features: [
         "Real-time visual concept generation",
         "Adaptive step-by-step voice guidance",
@@ -90,6 +118,8 @@ export const Projects: React.FC = () => {
       title: "Visual Validation Engine",
       description: "Automated high-precision testing tool designed for UI/UX validation. Detects pixel-level inconsistencies between design iterations and production.",
       tags: ["Automation", "OpenCV", "QA"],
+      thumbnail: "media/photo/2A9ADD17-4AB0-4344-9F0F-9DF1D961AB54.jpeg",
+      link: "https://www.linkedin.com/posts/paarth-thakran_automation-webtesting-softwaretesting-activity-7396890790767128576-6gl8?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFiGLBgBJyj10BuyNGOVXa5AhECBzYmKKeA",
       features: [
         "Instant pixel-perfect comparison",
         "Highlighted visual regression reporting",
